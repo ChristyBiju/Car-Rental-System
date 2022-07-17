@@ -1,0 +1,510 @@
+{% extends 'base.html' %}
+
+{% block title %}Cars{% endblock title %}
+
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+
+{% block body %}
+ 
+
+<main role="main" style="background-color: rgb(200, 200, 200)">
+
+    <section class="jumbotron text-center" style="background-color: rgb(200, 200, 200)">
+      <div class="container">
+        <h1 class="jumbotron-heading" style="font-size:50px">Cars</h1>
+       <p style="font-size:25px">Get wide varieties of cars in affordable prices!!</p>
+        <p>
+          <a href="/bike" class="btn btn-dark my-2 mx-5 px-5">Bike</a>
+          <a href="/bus" class="btn btn-dark my-2 mx-5 px-5">Bus</a>
+        </p>
+      </div>
+    </section>
+ 
+    <div class="album py-5 bg-light" id="1">
+      <div class="container" id="2">
+        
+        <div class="row" id="3">
+          {% comment %} {% for car in cars %} {% endcomment %}
+          <div class="col-md-4">
+            
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "renault.jpg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                
+                {% comment %} <h4 style="text-align:center" >{{car.car_name}}</h4> {% endcomment %}
+                <h4 style="text-align:center" >Renault</h4>
+                {% comment %} <p class="card-text" ></p> {% endcomment %}
+                <p class="card-text">Comfortable AC Car <br>Seating Capacity : 5 <br> Additional Features: Apple CarPlay</p>
+                {% comment %} <p class="card-text">{{car.desc}}</p> {% endcomment %}
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    {% comment %} <a href="/dates" class="btn btn-sm btn-dark " >RENT</a> {% endcomment %}
+                    <button type="button" class="btn btn-sm btn-dark " data-toggle="modal" data-target="#exampleModalCenter-{{forloop.counter}}">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter-{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" id="ftri">
+                            <p id="para">A/C Car <br>Car color : Red <br>Price per day :2000<br>
+                            Enter the number of days :
+                            <input type="number" id="stri" name="days" min="1" max="100" required >
+                          <br><span>N/A</span></p>
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            {% comment %} <button type="button" class="btn btn-primary">Confirm Booking</button> {% endcomment %}
+                            {% comment %} <a onclick="calculate()" type="button" class="btn btn-primary">Confirm Booking</a> {% endcomment %}
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" >
+                              Show Receipt
+                            </button>
+                            
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          {% comment %} {% endfor %} {% endcomment %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "alto.webp"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>Alto 800</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 5<br>Additional Features: Voice Recognition</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#exampleModalCenter1">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Silver <br>Price per day : 700 Rps <br>
+                            Enter the number of days :
+                            <input type="number" id="days" name="days" min="1" max="100">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="#" type="button" class="btn btn-primary">Show Receipt</a>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "innova.jpeg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>Innova Crysta</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 7,8<br>Additional Features: Bluetooth Connectivity</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark " data-toggle="modal" data-target="#exampleModalCenter2">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Magenta <br>Price per day : 3500 Rps <br>
+                            Enter the number of days :
+                            <input type="number" id="quantity" name="days" min="1" max="100">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="/bill" type="button" class="btn btn-primary">Show Receipt</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "taversa.jpg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>Chevy Traverse</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 7,8<br>Additional Features: Automatic Headlamps</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark "data-toggle="modal" data-target="#exampleModalCenter3">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Dark Gray<br>Price per day : 3000 Rps <br>
+                            Enter the number of days :
+                            <select id="days1" name="days1" class="form-control">
+                              <option value="1">1</option>
+                              <option value="1">2</option>
+                              <option value="1">3</option>
+                              <option value="1">4</option>
+                            </select>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="#" type="button" class="btn btn-primary">Show Receipt</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" id="4">
+            <div class="card mb-4 shadow-sm" id="5">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "bmw.jpg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body" id="6">
+                <h4 style="text-align:center" name='car'>BMW X5</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 5<br>Additional Features: Blind Spot detection</p>
+                <div class="d-flex justify-content-between align-items-center" id="7">
+                  <div class="btn-group" id="8">
+                    <button type="button" class="btn btn-sm btn-dark "data-toggle="modal" data-target="#exampleModalCenter4" id="rentbtn">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" id="9">
+                      <div class="modal-dialog modal-dialog-centered" role="document" id="10">
+                        <div class="modal-content" id="11">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" id="bill">
+                            A/C Car <br>Car color : Silver Gray <br>Price per day : 10000 Rps <br><br>
+                            Enter customer's name : 
+                            <input type = "text" id="full_name" name="full_name"><br><br>
+                            
+                            From : <input type = "text" id="from" name="from"> To : <input type = "text" id="to" name="to"><br><br>
+                             
+                              <br>
+                              <label for="date">Pickup Date:</label>
+                              <input type="date" id="date" name="date"><br><br>
+                            Enter the number of days :
+                            <input type="number" id="days" name="days" min="1" max="100">
+
+      
+                          </div>
+                          <div class="modal-footer" id="12">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            {% comment %} <a href="/bill" type="button" class="btn btn-primary">Confirm Booking</a> {% endcomment %}
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" id="showre" onclick="calculate()">
+                              Show Receipt
+                            </button>
+                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" id="13">
+                              <div class="modal-dialog modal-lg modal-dialog-centered" role="document" id="14" style="height:750px">
+                                <div class="modal-content" id="15" style="background-color:rgb(226, 239, 251); ">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Receipt : </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body" id="printThis"><h1 style="text-align:center; background: -webkit-linear-gradient(#77f7f1, #094240);-webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;" > Thanks for Booking! </h1><br>
+                                    <p id="n1" class="p2" style="text-align:center; font-size: 25px; font-weight:bold; color:rgb(35, 12, 109)" >Customer Name :  <span></span></p>
+                                    <p style="text-align:center"><span id="l1" class="p3" style="text-align:center; font-size: 25px; font-weight:bold ; color:rgb(35, 12, 109)" >From :  <span ></span></span> --------->
+                                      <span id="l2" class="p3" style="text-align:center; font-size: 25px; font-weight:bold; color:rgb(35, 12, 109)" >To :  <span ></span></span></p>
+                                      <p id="d1" class="p2" style="text-align:center; font-size: 25px; font-weight:bold; color:rgb(35, 12, 109)" >Pickup date :  <span></span></p>
+                                  
+                                   <p style="text-align:center; font-size: 23px;">
+                                    <span style="font-size:30px;font-weight:bold">Car Details :- </span><br><span style="font-weight:bold">Car : BMW X5 </span><br><span style="font-weight:bold">Seating</   span> : 5 seats <br><span style="font-weight:bold">Color</   span> : Silver Gray <br><br></p>
+                                    <p id="total" class="p1" style="text-align:center; font-size: 25px; font-weight:bold" >Total Bill: Rs <span>N/A</span></p>
+                                    
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="btnPrint">Download Receipt</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "honda.jpg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>Honda City</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 5<br>Additional Features: High Speed Alert</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark "data-toggle="modal" data-target="#exampleModalCenter5">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Royal Blue <br>Price per day : 2500 Rps <br>
+                            Enter the number of days :
+                            <input type="number" id="quantity" name="days" min="1" max="100">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="/bill" type="button" class="btn btn-primary">Show Receipt</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "mercedes.jpg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>Mercedes Benz</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 5<br>Additional Features:Climate Control</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark "data-toggle="modal" data-target="#exampleModalCenter6">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Black <br>Price per day : 40000 Rps <br>
+                            Enter the number of days :
+                            <input type="number" id="quantity" name="days" min="1" max="100">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="/bill" type="button" class="btn btn-primary">Show Receipt</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "swift.jpg"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>Swift Dezire</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 5<br>Additional Features: Alloy Wheels</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark "data-toggle="modal" data-target="#exampleModalCenter7">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Blue <br>Price per day : 1000 Rps <br>
+                            Enter the number of days :
+                            <input type="number" id="quantity" name="days" min="1" max="100">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="/bill" type="button" class="btn btn-primary">Show Receipt</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+              {%load static%}
+              <img src = "{%static "kia.webp"%}"  alt="bike" class="d-block w-100" height="225" >
+              <div class="card-body">
+                <h4 style="text-align:center" name='car'>KIA</h4>
+                <p class="card-text">Comfortable AC Car<br>Seating Capacity : 5<br>Additional Features: Passenger Airbag</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-dark "data-toggle="modal" data-target="#exampleModalCenter8">RENT</button>
+                    <div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle" >Wheel Steals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            A/C Car <br>Car color : Blue <br>Price per day : 800 Rps <br>
+                            Enter the number of days :
+                            <input type="number" id="quantity" name="days" min="1" max="100">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a href="/bill" type="button" class="btn btn-primary">Show Receipt</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  {% comment %} {%endblock%} {% endcomment %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    var num = 10000
+    function calculate(){
+      var name1 = document.getElementById("full_name").value;
+      var name2 = document.getElementById("n1");
+      var name3 = name2.querySelector("span");
+      name3.innerHTML = name1;
+
+      var loc_frm1 = document.getElementById("from").value;
+      var loc_frm2 = document.getElementById("l1");
+      var loc_frm3 = loc_frm2.querySelector("span");
+      loc_frm3.innerHTML = loc_frm1;
+
+      var loc_to1 = document.getElementById("to").value;
+      var loc_to2 = document.getElementById("l2");
+      var loc_to3 = loc_to2.querySelector("span");
+      loc_to3.innerHTML = loc_to1;
+
+      var da1 = document.getElementById("date").value;
+      var da2 = document.getElementById("d1");
+      var da3 = da2.querySelector("span");
+      da3.innerHTML = da1;
+
+    
+      var am1 = document.getElementById("bill");
+      var am2 = am1.querySelector("#days");
+      var days = Number(am2.value);
+      var total = days * num;
+  
+      var tp = document.getElementById("printThis")
+      var tp1 = tp.querySelector(".p1")
+      var tp2 = tp1.querySelector("span");
+      tp2.innerHTML = total;
+    }
+
+    document.getElementById("btnPrint").onclick = function () {
+      printElement(document.getElementById("printThis"));
+  }
+  
+  function printElement(elem) {
+      var domClone = elem.cloneNode(true);
+      
+      var $printSection = document.getElementById("printSection");
+      
+      if (!$printSection) {
+          var $printSection = document.createElement("div");
+          $printSection.id = "printSection";
+          document.body.appendChild($printSection);
+      }
+      
+      $printSection.innerHTML = "";
+      $printSection.appendChild(domClone);
+      window.print();
+  }
+  </script>
+
+{% endblock body %}
+
+
+
