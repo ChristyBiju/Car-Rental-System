@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+
+{% block body %}
+
+<section class="h-100 bg-dark">
+    {% include 'messages.html' %}
+	<div class="container py-5 h-100">
+	  <div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col">
+		  <div class="card card-registration my-4">
+			<div class="row g-0">
+			  <div class="col-xl-6 d-none d-xl-block">
+				<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+				  alt="Sample photo" class="img-fluid"
+				  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+			  </div>
+			  <div class="col-xl-6">
+				<div class="card-body p-md-5 text-black">
+				  <h3 class="mb-5 text-uppercase">Sign Up</h3>
+  
+				  
+   <form method="post"  action="\register">
+	{% csrf_token %}
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" id="name" placeholder="Name" name='name'>
+	  </div>
+	  <div class="form-group">
+		<label for="name">UserName</label>
+		<input type="text" class="form-control" id="username" placeholder="Name" name='username'>
+	  </div>
+	<div class="form-group">
+		<div class="form-group">
+			<label for="name">Phone Number</label>
+			<input type="num" class="form-control" id="number" placeholder="Eg: 9120001478" name='number'>
+		  </div>
+		<div class="form-group">
+	  <label for="exampleInputEmail1">Email address</label>
+	  <input type="Email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name='email'>
+	  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	</div>
+	<div class="form-group">
+	  <label for="exampleInputPassword1">Password</label>
+	  <input type="password" class="form-control" id="password" placeholder="Password" name='password'>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Confirm Password</label>
+		<input type="password" class="form-control" id="password2" placeholder="Confirm Password" name='password2'>
+	  </div>
+	{% comment %} <button type="submit" class="btn btn-primary">Submit</button> {% endcomment %}
+  
+				  <div class="d-flex justify-content-end pt-3">
+					{% comment %} <button type="button" class="btn btn-warning btn-lg ms-2" href="\login">Submit form</button> {% endcomment %}
+					<button type="submit" class="btn btn-warning btn-lg ms-2">Submit</button>
+				  </div>
+				</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+
+{% endblock body %}
