@@ -25,4 +25,4 @@ https://user-images.githubusercontent.com/89544124/180066688-a8265b4c-d72c-46b7-
 * Type python manage.py runserver and run the program
 ```
 ## Author :
-* Christy Biju (MIS 112003031)
+* Christy Biju (https://github.com/ChristyBiju)
